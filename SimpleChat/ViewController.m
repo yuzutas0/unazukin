@@ -29,6 +29,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // チャットUI生成
+    [self initNewChat];
+    // メッセージデータの配列を初期化
+    self.messages = [NSMutableArray array];
+    [self makeDictionary];
+    // 擬似的に自動でメッセージを受信
+    [self startChat];
+}
+
+#pragma mark - Auto Message
+
+- (void)initNewChat
+{
     // 自分の senderId, senderDisplayName を設定
     self.senderId = @"user1";
     self.senderDisplayName = @"classmethod";
@@ -39,14 +52,8 @@
     // アバター画像を設定
     self.incomingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"User2"] diameter:64];
     self.outgoingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"User1"] diameter:64];
-    // メッセージデータの配列を初期化
-    self.messages = [NSMutableArray array];
-    [self makeDictionary];
-    // 擬似的に自動でメッセージを受信
-    [self startChat];
 }
 
-#pragma mark - Auto Message
 
 - (void)receiveAutoMessage
 {
