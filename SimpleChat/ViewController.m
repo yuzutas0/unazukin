@@ -163,7 +163,7 @@
     [words addObject:@"なるほど"];
     [words addObject:@"すごいね"];
     [words addObject:@"きみは悪くない"];
-    [words addObject:@"お前がそう思うんならそうなんだろう\nお前の中ではな"];
+    //[words addObject:@"お前がそう思うんならそうなんだろう\nお前の中ではな"];
     self.terms = words;
 }
 
